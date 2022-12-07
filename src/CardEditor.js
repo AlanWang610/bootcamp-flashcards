@@ -1,6 +1,5 @@
 import React from 'react';
 import './CardEditor.css';
-
 class CardEditor extends React.Component {
   constructor(props) {
     super(props);
@@ -24,12 +23,12 @@ class CardEditor extends React.Component {
           <td>{card.front}</td>
           <td>{card.back}</td>
           <td>
+            <button>Delete card</button>
             <button onClick={() => this.deleteCard(index)}>Delete card</button>
           </td>
         </tr>
       );
     });
-
     return (
       <div>
         <h2>Card Editor</h2>
@@ -56,6 +55,7 @@ class CardEditor extends React.Component {
           placeholder="Back of card"
           value={this.state.back}
         />
+        <button>Add card</button>
         <button onClick={this.addCard}>Add card</button>
         <hr />
         <button onClick={this.props.switchMode}>Go to card viewer</button>
@@ -63,5 +63,4 @@ class CardEditor extends React.Component {
     );
   }
 }
-
 export default CardEditor;
