@@ -54,7 +54,7 @@ class CardEditor extends React.Component {
           placeholder="Back of card"
           value={this.state.back}
         />
-        <button onClick={this.addCard} disabled={this.state.front == '' || this.state.back == ''}>Add card</button>
+        <button onClick={this.addCard} disabled={this.state.front === '' || this.state.back === ''}>Add card</button>
         <hr />
         <button onClick={this.props.switchMode}>Go to card viewer</button>
       </div>
