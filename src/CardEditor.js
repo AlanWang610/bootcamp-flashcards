@@ -23,7 +23,6 @@ class CardEditor extends React.Component {
           <td>{card.front}</td>
           <td>{card.back}</td>
           <td>
-            <button>Delete card</button>
             <button onClick={() => this.deleteCard(index)}>Delete card</button>
           </td>
         </tr>
@@ -55,8 +54,7 @@ class CardEditor extends React.Component {
           placeholder="Back of card"
           value={this.state.back}
         />
-        <button>Add card</button>
-        <button onClick={this.addCard}>Add card</button>
+        <button onClick={this.addCard} disabled={this.state.front == '' || this.state.back == ''}>Add card</button>
         <hr />
         <button onClick={this.props.switchMode}>Go to card viewer</button>
       </div>
