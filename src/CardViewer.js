@@ -1,10 +1,11 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 class CardViewer extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {index: 0, total: 20, flip: 0};
+        this.state = {index: 0, total: this.props.cards.length - 1, flip: 0};
       }
 
     nextCard = () => {
@@ -36,7 +37,7 @@ class CardViewer extends React.Component {
         <button onClick={this.prevCard} disabled={this.state.index === 0}>Prev</button>
         <button onClick={this.nextCard} disabled={this.state.index === this.state.total}>Next</button>
         <hr />
-        <button onClick={this.props.switchMode}>Go to card editor</button>
+        <Link to="/editor">Go to card editor</Link>
       </div>
     );
   }
