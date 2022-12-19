@@ -45,7 +45,7 @@ class App extends React.Component {
         cards={this.state.cards}
         deleteCard={this.deleteCard}/>
         </Route>
-        <Route exact path="/viewer"><CardViewer 
+        <Route exact path="/viewer/:deckId"><CardViewer 
         cards={this.state.cards} /></Route>
       </Switch>
     );
